@@ -38,12 +38,11 @@ public class VM {
 	}
 
 
-	//TODO:implements when have time
 	public void addProducts(List<Universal> productList){
-		//this.productList+=productList;
+		this.productList = Universal.opUniversalList(this.productList, productList,"+");
 	}
 
-	public boolean canReturnChange(Double totalMoneyToReturn){
+	public boolean canReturnChange(int totalMoneyToReturn){
 		return this.vmBalance.getReturnChange(totalMoneyToReturn,null) != null;
 	}
 
@@ -60,11 +59,11 @@ public class VM {
 		try{
 			if(universalProduct!=null && universalProduct.getQuantity()>0) {
 				Product product = (Product) universalProduct.getObject();
-				Double userTotalMoney = request.getUserBalance().getTotal();
-				Double productPrice = product.getPrice();
+				int userTotalMoney = request.getUserBalance().getTotal();
+				int productPrice = product.getPrice();
 
 				if(userTotalMoney >= productPrice ){
-					double changeMoney=userTotalMoney - productPrice;
+					int changeMoney=userTotalMoney - productPrice;
 					if(this.canReturnChange(changeMoney)){
 						this.vmBalance.addBalance(request.getUserBalance());
 						Response response = new Response(product,this.vmBalance.getReturnChange(changeMoney,null));

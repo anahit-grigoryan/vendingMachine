@@ -3,10 +3,10 @@ package vm;
 public class Product
 		implements iCountable {
 	protected String id;
-	protected double price;
+	protected int price;
 	protected String title;
 
-	public Product(String id, double price, String title) {
+	public Product(String id, int price, String title) {
 		this.id = id;
 		this.price = price;
 		this.title = title;
@@ -20,11 +20,11 @@ public class Product
 		this.id = id;
 	}
 
-	public double getPrice() {
+	public int getPrice() {
 		return this.price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 

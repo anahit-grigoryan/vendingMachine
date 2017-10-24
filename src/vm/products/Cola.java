@@ -10,7 +10,7 @@ public class Cola
 	 * @param price
 	 * @param size
 	 */
-	public Cola(double price, double size) {
+	public Cola(int price, double size) {
 		super("A", price, "Cola");
 		this.size = size;
 	}

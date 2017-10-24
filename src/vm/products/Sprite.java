@@ -10,7 +10,7 @@ public class Sprite
 	 * @param price
 	 * @param size
 	 */
-	public Sprite(double price, double size) {
+	public Sprite(int price, double size) {
 		super("C", price, "Sprite");
 		this.size = size;
 	}

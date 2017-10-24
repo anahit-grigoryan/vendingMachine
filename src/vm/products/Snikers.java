@@ -10,7 +10,7 @@ public class Snikers
 	 * @param price
 	 * @param type
 	 */
-	public Snikers(double price, String type) {
+	public Snikers(int price, String type) {
 		super("D", price, "Snikers");
 		this.type = type;
 	}

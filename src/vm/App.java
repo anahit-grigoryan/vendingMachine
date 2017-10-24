@@ -1,9 +1,5 @@
 package vm;
 
-import vm.banknotes.Banknote100;
-import vm.banknotes.Banknote200;
-import vm.banknotes.Banknote50;
-import vm.banknotes.Banknote500;
 import vm.products.Cola;
 import vm.products.Fanta;
 import vm.products.Snikers;
@@ -14,10 +10,10 @@ import java.util.ArrayList;
 public class App {
 	public static void main(String[] args) {
 
-		Banknote50 banknote50 = new Banknote50();
-		Banknote100 banknote100 = new Banknote100();
-		Banknote200 banknote200 = new Banknote200();
-		Banknote500 banknote500 = new Banknote500();
+		Banknote banknote50 = Banknote.createBanknote(50);
+		Banknote banknote100 = Banknote.createBanknote(100);
+		Banknote banknote200 = Banknote.createBanknote(200);
+		Banknote banknote500 = Banknote.createBanknote(500);
 
 		Cola cola = new Cola(250, 1);
 		Fanta fanta = new Fanta(300, 1);

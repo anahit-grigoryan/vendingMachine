@@ -10,7 +10,7 @@ public class Fanta
 	 * @param price
 	 * @param size
 	 */
-	public Fanta(double price, double size) {
+	public Fanta(int price, double size) {
 		super("B", price, "Fanta");
 		this.size = size;
 	}

@@ -18,10 +18,10 @@ public class Balance {
 		Universal.add(this.banknoteList, banknote, qty);
 	}
 
-	public double getTotal() {
+	public int getTotal() {
 		return banknoteList.stream()
 				.map(e -> ((Banknote) e.getObject()).getValue() * e.getQuantity())
-				.reduce(0.0, (a, b) -> a + b);
+				.reduce(0, (a, b) -> a + b);
 	}
 
 	/**
@@ -54,7 +54,7 @@ public class Balance {
 	 * @param balance
 	 * @return
 	 */
-	public Balance getReturnChange(double money, Balance balance) {
+	public Balance getReturnChange(int money, Balance balance) {
 		if (money == 0.0) {
 			return balance;
 		}
@@ -67,10 +67,10 @@ public class Balance {
 			return null;
 		}
 		Banknote maxBanknote = (Banknote) maxUniversal.getObject();
-		int banknoteCount = (int) (money / maxBanknote.getValue());
+		int banknoteCount = money / maxBanknote.getValue();
 		banknoteCount = min(banknoteCount, maxUniversal.getQuantity());
 
-		double restMoney = money - banknoteCount * maxBanknote.getValue();
+		int restMoney = money - banknoteCount * maxBanknote.getValue();
 
 		Universal newUniversal = new Universal(maxBanknote, banknoteCount);
 
